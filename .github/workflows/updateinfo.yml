@@ -26,21 +26,17 @@ jobs:
         uses: actions/setup-node@v2.1.2
         with:
           node-version: 14.x
-      - name: Setup Python
-        uses: actions/setup-python@v2.1.4
-        with:
-          python-version: 3.9
-      - name: update readme
+      - name: Update readme
         run: |
           npm install
           node script.js
-      - name: commit files
+      - name: Commit files
         run: |
           git config --local user.email "actions@github.com"
           git config --local user.name "GitHub Action"
           git add .
           git commit -m "update README"
-      - name: push commit
+      - name: Push commit
         uses: ad-m/github-push-action@v0.6.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
