@@ -40,7 +40,7 @@ var totalRetrievingFunds = 0;
 var currentCost = 0;
 
 function parseData() {
-    const data = fs.readFileSync('./dog-egg.txt').toString().split('\n');
+    const data = fs.readFileSync('./dog_egg.txt').toString().split('\n');
     data.filter(function (value) {
         return value.trim().length > 0
     }).forEach(function (value, index) {
